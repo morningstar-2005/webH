@@ -159,27 +159,85 @@
                 padding: 1rem;
             }
         }
+
+        @media (max-width: 480px) {
+            .card-image {
+                height: 280px;
+            }
+            
+            .card-content {
+                padding: 1rem;
+            }
+        }
+
+        .hobby-card {
+          background-color: #4f46e5;
+          color: white;
+          padding: 0.7rem 1.2rem;
+          border-radius: 0.6rem;
+          cursor: pointer;
+          transition: background 0.3s ease;
+          text-align: center;
+        }
+
+        .hobby-card:hover {
+          background-color: #3730a3;
+        }
+
+        .hobby-info {
+          background-color: #f1f5f9;
+          padding: 1rem;
+          border-left: 5px solid #4f46e5;
+          border-radius: 0.5rem;
+          font-size: 1rem;
+          color: #1f2937;
+        }
+    </style>
+
+
+
+
+
+
     </style>
 </head>
+
+
+
+
+
+
+
 <body>
     <div class="container">
         <!-- Título principal -->
         <header class="header">
             <h1 class="main-title">RETO FINAL</h1>
             <div class="title-underline"></div>
+
+
+            <div style="margin-top: 2rem;">
+                <img src="https://cdn.pixabay.com/photo/2015/07/27/20/16/students-862136_1280.jpg" alt="Imagen de bienvenida" style="max-width: 100%; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" />
+            </div>
+                  
+
+
+
+
         </header>
 
         <!-- Grid de integrantes -->
         <main class="team-grid">
             <div class="member-card">
-                <a href="persona1.html" class="card-link">
+                <a href="#" class="card-link" onclick="mostrarPerfilAna(); return false;">
+                    
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face" alt="Ana García" />
+                        <img src="https://bing.com/th/id/BCO.ef65d6ea-eafb-40b0-a1e4-da4818baa795.png" alt="Gaylet Paternina" />
                         <div class="card-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="member-name">Ana García</h3>
-                        <p class="member-role">Desarrolladora Frontend</p>
+                        <h3 class="member-name">Gaylet Paternina</h3>
+                        <p class="member-role">Ingeniera de Sistemas</p>
                     </div>
                 </a>
             </div>
@@ -211,10 +269,128 @@
             </div>
         </main>
 
+
+
+
+        <!-- Sección de perfil de Gaylet Paternina -->
+<section id="perfil-ana" style="display: none;">
+    <div class="member-card" style="max-width: 700px; margin: 0 auto;">
+        <div class="card-image">
+            <img src="https://bing.com/th/id/BCO.321c9379-d3fd-4d7d-8905-aa204178855d.png"/>
+        </div>
+        <div class="card-content">
+            <img src="https://bing.com/th/id/BCO.ef65d6ea-eafb-40b0-a1e4-da4818baa795.png" alt="Gaylet Paternina"  style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+            <h3 class="member-name">Gaylet Paternina</h3>
+            <p class="member-role">Estudiante de quinto semestre de Ingeniería de Sistemas, apasionada por el desarrollo web y las nuevas tecnologías.</p>
+            
+            <h4 style="margin-top: 1.5rem; color: #4f46e5;">Mis hobbies</h4>
+            <div class="team-grid" style="margin-top: 1rem;">
+                <div class="member-card" onclick="mostrarHobby('foto')">
+                    <div class="card-content">
+                        <img src="https://bing.com/th/id/BCO.d8f9a406-a18b-4bdb-b3d3-0fee289b171b.png"/>
+                        <h3 class="member-name">📸 FOTOGRAFIA</h3>
+                        <p class="member-role">Haz clic para saber más</p>
+                    </div>
+                </div>
+                <div class="member-card" onclick="mostrarHobby('lectura')">
+                    <div class="card-content">
+                        <img src="https://bing.com/th/id/BCO.b01828d5-f33c-4972-bbc6-6ca48da68f62.png"/>
+                        <h3 class="member-name">📚 LECTURA</h3>
+                        <p class="member-role">Haz clic para saber más</p>
+                    </div>
+                </div>
+                <div class="member-card" onclick="mostrarHobby('juegos')">
+                    <div class="card-content">
+                        <h3 class="member-name">🎮 Videojuegos</h3>
+                        <p class="member-role">Haz clic para saber más</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido desplegable de hobbies -->
+            <div id="hobby-foto" class="hobby-info" style="display:none; margin-top: 1rem;">
+                Me encanta capturar momentos únicos con mi celular, explorando luz y composición.
+            </div>
+            <div id="hobby-lectura" class="hobby-info" style="display:none; margin-top: 1rem;">
+                Disfruto leer ciencia ficción, fantasía y libros de desarrollo personal.
+            </div>
+            <div id="hobby-juegos" class="hobby-info" style="display:none; margin-top: 1rem;">
+                Me apasionan los videojuegos con narrativa profunda y mecánicas creativas.
+            </div>
+
+            <button onclick="volverAlInicio()" style="margin-top: 2rem; padding: 0.6rem 1rem; background: #4f46e5; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
+                ← Volver al equipo
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
         <!-- Texto informativo -->
         <footer class="info-text">
             <p>Haz clic en cualquier integrante para conocer más sobre su perfil</p>
         </footer>
     </div>
+
+
+
+<!-- Modal de perfil de Gaylet Paternina -->
+<div id="modal-ana" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center;">
+    <div style="background:#fff; max-width:700px; width:90%; border-radius:1rem; padding:2rem; position:relative; box-shadow:0 10px 40px rgba(0,0,0,0.2); overflow-y:auto; max-height:90vh;">
+      <span onclick="cerrarModal()" style="position:absolute; top:1rem; right:1.5rem; font-size:1.5rem; cursor:pointer;">&times;</span>
+      <h2 style="text-align:center; color:#4f46e5;">Gaylet Paternina</h2>
+      <p style="text-align:center; margin-top:1rem;">
+        Estudiante de quinto semestre de Ingeniería de Sistemas, apasionada por el desarrollo web y las nuevas tecnologías.
+      </p>
+  
+      <h3 style="margin-top:2rem; text-align:center;">Mis hobbies</h3>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-top:1rem;">
+        <div class="hobby-card" onclick="mostrarInfo('foto')">📸 Fotografía</div>
+        <div class="hobby-card" onclick="mostrarInfo('lectura')">📚 Lectura</div>
+        <div class="hobby-card" onclick="mostrarInfo('juegos')">🎮 Videojuegos</div>
+      </div>
+  
+      <div id="info-foto" class="hobby-info" style="display:none; margin-top:1.5rem;">
+        Me encanta capturar momentos únicos con mi celular. Disfruto experimentar con luz, perspectiva y composición.
+      </div>
+      <div id="info-lectura" class="hobby-info" style="display:none; margin-top:1.5rem;">
+        Amante de la lectura de ciencia ficción y fantasía. Leer me permite viajar sin moverme.
+      </div>
+      <div id="info-juegos" class="hobby-info" style="display:none; margin-top:1.5rem;">
+        Me apasionan los videojuegos con historia. Juego para aprender, reflexionar y divertirme.
+      </div>
+    </div>
+  </div>
+  
+
+  
+
+<script>
+  function mostrarPerfilAna() {
+    document.querySelector('.team-grid').style.display = 'none';
+    document.getElementById('perfil-ana').style.display = 'block';
+  }
+
+  function volverAlInicio() {
+    document.querySelector('.team-grid').style.display = 'grid';
+    document.getElementById('perfil-ana').style.display = 'none';
+
+    // Oculta los hobbies si estaban abiertos
+    document.querySelectorAll('.hobby-info').forEach(e => e.style.display = 'none');
+  }
+
+  function mostrarHobby(id) {
+    document.querySelectorAll('.hobby-info').forEach(e => e.style.display = 'none');
+    document.getElementById('hobby-' + id).style.display = 'block';
+  }
+</script>
+
+
+
+
+
 </body>
 </html>
