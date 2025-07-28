@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto Final - Presentación del Equipo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            padding: 3rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .main-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .title-underline {
+            width: 6rem;
+            height: 4px;
+            background: #4f46e5;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+        }
+
+        .member-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card-image {
+            position: relative;
+            overflow: hidden;
+            height: 320px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .member-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .member-card:hover .member-name {
+            color: #4f46e5;
+        }
+
+        .member-role {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .info-text {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .info-text p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 2rem 1rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .header {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-image {
+                height: 280px;
+            }
+            
+            .card-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Título principal -->
+        <header class="header">
+            <h1 class="main-title">RETO FINAL</h1>
+            <div class="title-underline"></div>
+        </header>
+
+        <!-- Grid de integrantes -->
+        <main class="team-grid">
+            <div class="member-card">
+                <a href="persona1.html" class="card-link">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face" alt="Ana García" />
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="member-name">Ana García</h3>
+                        <p class="member-role">Desarrolladora Frontend</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="member-card">
+                <a href="persona2.html" class="card-link">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Carlos López" />
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="member-name">Carlos López</h3>
+                        <p class="member-role">Diseñador UX/UI</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="member-card">
+                <a href="persona3.html" class="card-link">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face" alt="María Rodríguez" />
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="member-name">María Rodríguez</h3>
+                        <p class="member-role">Project Manager</p>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <!-- Texto informativo -->
+        <footer class="info-text">
+            <p>Haz clic en cualquier integrante para conocer más sobre su perfil</p>
+        </footer>
+    </div>
+</body>
+</html>
