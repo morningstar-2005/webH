@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reto Final - Presentación del Equipo</title>
     <style>
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4f46e5;
+            color: white;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #chatbot-frame-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        .hidden {
+            display: none;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -216,5 +251,25 @@
             <p>Haz clic en cualquier integrante para conocer más sobre su perfil</p>
         </footer>
     </div>
+    <!-- Botón flotante -->
+
+    <div id="chatbot-toggle">💬</div>
+
+    <!-- Contenedor del iframe del chatbot -->
+    <div id="chatbot-frame-container" class="hidden">
+        <iframe 
+            src="https://copilotstudio.microsoft.com/environments/Default-6ca34ae1-466f-44bc-a7aa-0ac5a78c61b1/bots/cr3a3_perfilPersonal/webchat?__version__=2"
+            frameborder="0"
+            style="width: 100%; height: 100%; border: none;"
+        ></iframe>
+    </div>
+
 </body>
+<script>
+    document.getElementById('chatbot-toggle').addEventListener('click', () => {
+        const frame = document.getElementById('chatbot-frame-container');
+        frame.classList.toggle('hidden');
+    });
+    </script>
+    
 </html>
