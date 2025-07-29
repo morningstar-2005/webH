@@ -193,10 +193,281 @@
           color: #1f2937;
         }
     </style>
+   </style>
+
+
+   <style>
+    .modal-hobby {
+        display: none; 
+        position: fixed;
+        z-index: 999;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.6);
+    }
+    
+    .modal-content-hobby {
+        background-color: #fff;
+        margin: auto;
+        padding: 2rem;
+        border: 1px solid #888;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 1rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    
+    .close-modal {
+        color: #aaa;
+        float: right;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .close-modal:hover {
+        color: #000;
+    }
 
 
 
 
+
+
+    .shopping-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.product-card button {
+    padding: 0.5rem 1rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-contenido {
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.cerrar {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #000;
+}
+
+
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.cerrar {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #333;
+}
+</style>
+
+
+
+<style>
+    .modal-hobby {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .modal-content-hobby {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+    
+    .close-modal {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .close-modal:hover {
+      color: #000;
+    }
+
+
+
+
+    .card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 400px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  width: 100%;
+  height: 400px;
+  object-fit: contain; /* <- Mostrará toda la imagen, sin recorte */
+  object-position: center;
+  background-color: #f3f4f6; /* fondo gris claro para que no se vea vacío */
+}
+
+.card-text {
+  padding: 16px;
+  text-align: center;
+}
+
+.card-text h3 {
+  font-size: 1.4rem;
+  color: #4f46e5;
+  margin-bottom: 5px;
+}
+
+.card-text p {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+
+
+
+
+
+
+    </style>
+    
 
 
     </style>
@@ -214,25 +485,15 @@
         <header class="header">
             <h1 class="main-title">RETO FINAL</h1>
             <div class="title-underline"></div>
-
-
-            <div style="margin-top: 2rem;">
-                <img src="https://cdn.pixabay.com/photo/2015/07/27/20/16/students-862136_1280.jpg" alt="Imagen de bienvenida" style="max-width: 100%; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" />
-            </div>
                   
-
-
-
-
         </header>
 
         <!-- Grid de integrantes -->
         <main class="team-grid">
             <div class="member-card">
                 <a href="#" class="card-link" onclick="mostrarPerfilAna(); return false;">
-                    
                     <div class="card-image">
-                        <img src="https://bing.com/th/id/BCO.ef65d6ea-eafb-40b0-a1e4-da4818baa795.png" alt="Gaylet Paternina" />
+                        <img src="https://bing.com/th/id/BCO.3977cbd8-e90b-4038-abee-b96809f31bf7.png" alt="Gaylet Paternina" />
                         <div class="card-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -241,75 +502,76 @@
                     </div>
                 </a>
             </div>
-
-            <div class="member-card">
-                <a href="persona2.html" class="card-link">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Carlos López" />
-                        <div class="card-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="member-name">Carlos López</h3>
-                        <p class="member-role">Diseñador UX/UI</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="member-card">
-                <a href="persona3.html" class="card-link">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face" alt="María Rodríguez" />
-                        <div class="card-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="member-name">María Rodríguez</h3>
-                        <p class="member-role">Project Manager</p>
-                    </div>
-                </a>
-            </div>
         </main>
 
 
 
-
         <!-- Sección de perfil de Gaylet Paternina -->
-<section id="perfil-ana" style="display: none;">
+ <section id="perfil-ana" style="display: none;">
     <div class="member-card" style="max-width: 700px; margin: 0 auto;">
         <div class="card-image">
             <img src="https://bing.com/th/id/BCO.321c9379-d3fd-4d7d-8905-aa204178855d.png"/>
         </div>
         <div class="card-content">
-            <img src="https://bing.com/th/id/BCO.ef65d6ea-eafb-40b0-a1e4-da4818baa795.png" alt="Gaylet Paternina"  style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
-            <h3 class="member-name">Gaylet Paternina</h3>
-            <p class="member-role">Estudiante de quinto semestre de Ingeniería de Sistemas, apasionada por el desarrollo web y las nuevas tecnologías.</p>
+            <img src="https://bing.com/th/id/BCO.56a67b25-6f9e-49a4-910b-0c4137b8c78b.png" alt="Gaylet Paternina"  style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
             
-            <h4 style="margin-top: 1.5rem; color: #4f46e5;">Mis hobbies</h4>
+            <p class="member-role" style="text-align: justify;"> Mi nombre es Gaylet Paternina naci en el año 2007 en la ciudad de Valledupar, Cesar. Me apasiona la creatividad y el aprendizaje constante. Mi objetivo es crear soluciones que generen impacto positivo y conectar con personas que compartan el mismo interés por construir un mundo mejor desde lo que hacemos día a día.
+                Además de estudiar, disfruto de mis hobbies como la fotografia, la lectura, pintar, que me ayudan a mantener el equilibrio y la inspiración.</p>
+            
+            <h2 style="margin-top: 1.5rem; color: #4f46e5; font-weight: bold; font-size: 2rem;"> MIS HOBBIES</h2>
+            
             <div class="team-grid" style="margin-top: 1rem;">
-                <div class="member-card" onclick="mostrarHobby('foto')">
-                    <div class="card-content">
-                        <img src="https://bing.com/th/id/BCO.d8f9a406-a18b-4bdb-b3d3-0fee289b171b.png"/>
-                        <h3 class="member-name">📸 FOTOGRAFIA</h3>
-                        <p class="member-role">Haz clic para saber más</p>
+                <div style="display: flex; justify-content: center;">
+                    <div class="member-card" onclick="mostrarHobby('foto')">
+                        <div class="card-content">
+                            <img src="https://bing.com/th/id/BCO.13ae5b67-2bb6-42d9-959c-c3a6f2e768d7.png" style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                            <h3 class="member-name"> FOTOGRAFIA</h3>
+                            <p class="member-role">Haz clic para saber más</p>
+                        </div>
+                    </div>
+                </div>    
+                <div style="display: flex; justify-content: center;"> 
+                    <div class="member-card" onclick="mostrarHobby('lectura')">
+                        <div class="card-content">
+                                <img src="https://bing.com/th/id/BCO.79f133fa-33ad-4717-af36-b27a8ac2efd0.png" style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                            <h3 class="member-name"> LECTURA</h3>
+                            <p class="member-role">Haz clic para saber más</p>
+                        </div>
                     </div>
                 </div>
-                <div class="member-card" onclick="mostrarHobby('lectura')">
-                    <div class="card-content">
-                        <img src="https://bing.com/th/id/BCO.b01828d5-f33c-4972-bbc6-6ca48da68f62.png"/>
-                        <h3 class="member-name">📚 LECTURA</h3>
-                        <p class="member-role">Haz clic para saber más</p>
+                <div style="display: flex; justify-content: center;">
+                    <div class="member-card" onclick="mostrarHobby('pintura')">
+                        <div class="card-content">
+                            <img src="https://bing.com/th/id/BCO.f5e3803d-974e-41d2-bbd8-f36aaab3867c.png"
+                                style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                            <h3 class="member-name"> PINTURA </h3>
+                            <p class="member-role">Haz clic para saber más</p>
+                        </div>
                     </div>
                 </div>
-                <div class="member-card" onclick="mostrarHobby('juegos')">
-                    <div class="card-content">
-                        <h3 class="member-name">🎮 Videojuegos</h3>
-                        <p class="member-role">Haz clic para saber más</p>
+
+                <div style="display: flex; justify-content: center;">
+                    <div class="member-card" onclick="mostrarHobby('escuchar musica')">
+                        <div class="card-content">
+                            <img src="https://bing.com/th/id/BCO.f4bda3d6-8ee5-4cc9-aed3-36f0a6000089.png"
+                                style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                            <h3 class="member-name"> ESCUCHAR MUSICA </h3>
+                            <p class="member-role">Haz clic para saber más</p>
+                        </div>
                     </div>
                 </div>
+
+                
             </div>
 
             <!-- Contenido desplegable de hobbies -->
             <div id="hobby-foto" class="hobby-info" style="display:none; margin-top: 1rem;">
-                Me encanta capturar momentos únicos con mi celular, explorando luz y composición.
+                <img src="https://bing.com/th/id/BCO.13ae5b67-2bb6-42d9-959c-c3a6f2e768d7.png" style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                <h3 class="member-name"> FOTOGRAFIA</h3>
+                <p class="member-role" style="text-align: justify;"> La fotografía es uno de mis pasatiempos favoritos. Me permite capturar momentos únicos, emociones auténticas y la belleza que a veces pasa desapercibida en lo cotidiano. A través de imagnes, se descubren nuevas formas de ver el mundo y contar historias sin necesidad de palabras. 
+                    Ya sea retratando paisajes, personas o detalles urbanos, disfruto experimentar con la luz, los colores y las perspectivas para crear imágenes que transmitan algo especial. Para mí, cada fotografía es una forma de expresión y una manera de conectar con mi entorno.</p>
+
+
             </div>
             <div id="hobby-lectura" class="hobby-info" style="display:none; margin-top: 1rem;">
                 Disfruto leer ciencia ficción, fantasía y libros de desarrollo personal.
@@ -318,10 +580,49 @@
                 Me apasionan los videojuegos con narrativa profunda y mecánicas creativas.
             </div>
 
-            <button onclick="volverAlInicio()" style="margin-top: 2rem; padding: 0.6rem 1rem; background: #4f46e5; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
-                ← Volver al equipo
-            </button>
-        </div>
+
+
+
+<!-- Sección de Tienda de Productos -->
+<section id="seccion-shopping" style="margin-top: 3rem;">
+    <h2 style="color: #4f46e5; font-weight: bold; font-size: 2rem; text-align: center; margin-bottom: 1.5rem;">
+        TIENDA DE PRODUCTOS DESTACADOS
+    </h2>
+
+    <div class="shopping-grid">
+        <!-- Producto 1 -->
+       
+    <div class="product-card">
+        <img src="https://bing.com/th/id/BCO.9721a1ba-b2f4-4952-9216-260df9ea91e1.png" alt="Cámara Vintage" />
+        <h3>Cámara Vintage</h3>
+        <p>Ideal para capturar tus mejores momentos con un toque clásico.</p>
+        <button onclick="mostrarDetalleProducto()">Ver más</button>
+    </div>
+
+      <!-- Producto 2 -->
+    <div class="product-card">
+        <img src="https://bing.com/th/id/BCO.6bedd02e-ce50-4f1b-a8f7-59f6ab5281f8.png" alt="Set de Pintura" />
+        <h3>Set de Pintura</h3>
+        <p>Incluye pinceles, acuarelas y lienzos para liberar tu creatividad.</p>
+        <button onclick="abrirModal('modalPintura')">Ver más</button>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="product-card">
+        <img src="https://bing.com/th/id/BCO.9f9b6acf-4287-4931-aa5d-5d3dc00c3a34.png" alt="Libro Inspirador" />
+        <h3>Libro Inspirador</h3>
+        <p>Una lectura que transformará tu forma de ver el mundo.</p>
+        <button onclick="abrirModal('modalLibro')">Ver más</button>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="product-card">
+        <img src="https://bing.com/th/id/BCO.cbd2d344-dfd3-450b-b030-fdeb063699d0.png" alt="Auriculares" />
+        <h3>Auriculares Pro</h3>
+        <p>Disfruta tu música con la mejor calidad de sonido y estilo.</p>
+        <button onclick="abrirModal('modalAuriculares')">Ver más</button>
+    </div>
+
     </div>
 </section>
 
@@ -329,46 +630,20 @@
 
 
 
-        <!-- Texto informativo -->
-        <footer class="info-text">
-            <p>Haz clic en cualquier integrante para conocer más sobre su perfil</p>
-        </footer>
+
+            <button onclick="volverAlInicio()" style="margin-top: 2rem; padding: 0.6rem 1rem; background: #4f46e5; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
+                ← Volver al equipo
+            </button>
+        </div>
     </div>
+ </section>
 
 
 
-<!-- Modal de perfil de Gaylet Paternina -->
-<div id="modal-ana" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center;">
-    <div style="background:#fff; max-width:700px; width:90%; border-radius:1rem; padding:2rem; position:relative; box-shadow:0 10px 40px rgba(0,0,0,0.2); overflow-y:auto; max-height:90vh;">
-      <span onclick="cerrarModal()" style="position:absolute; top:1rem; right:1.5rem; font-size:1.5rem; cursor:pointer;">&times;</span>
-      <h2 style="text-align:center; color:#4f46e5;">Gaylet Paternina</h2>
-      <p style="text-align:center; margin-top:1rem;">
-        Estudiante de quinto semestre de Ingeniería de Sistemas, apasionada por el desarrollo web y las nuevas tecnologías.
-      </p>
-  
-      <h3 style="margin-top:2rem; text-align:center;">Mis hobbies</h3>
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-top:1rem;">
-        <div class="hobby-card" onclick="mostrarInfo('foto')">📸 Fotografía</div>
-        <div class="hobby-card" onclick="mostrarInfo('lectura')">📚 Lectura</div>
-        <div class="hobby-card" onclick="mostrarInfo('juegos')">🎮 Videojuegos</div>
-      </div>
-  
-      <div id="info-foto" class="hobby-info" style="display:none; margin-top:1.5rem;">
-        Me encanta capturar momentos únicos con mi celular. Disfruto experimentar con luz, perspectiva y composición.
-      </div>
-      <div id="info-lectura" class="hobby-info" style="display:none; margin-top:1.5rem;">
-        Amante de la lectura de ciencia ficción y fantasía. Leer me permite viajar sin moverme.
-      </div>
-      <div id="info-juegos" class="hobby-info" style="display:none; margin-top:1.5rem;">
-        Me apasionan los videojuegos con historia. Juego para aprender, reflexionar y divertirme.
-      </div>
-    </div>
-  </div>
-  
 
   
 
-<script>
+ <script>
   function mostrarPerfilAna() {
     document.querySelector('.team-grid').style.display = 'none';
     document.getElementById('perfil-ana').style.display = 'block';
@@ -386,9 +661,177 @@
     document.querySelectorAll('.hobby-info').forEach(e => e.style.display = 'none');
     document.getElementById('hobby-' + id).style.display = 'block';
   }
-</script>
+ </script>
 
 
+
+<div id="modalHobby" class="modal-hobby">
+    <div class="modal-content-hobby">
+      <span class="close-modal" onclick="cerrarModal()">&times;</span>
+      <div id="modalTextoHobby"></div>
+    </div>
+  </div>
+  
+ 
+
+    <!-- Modal de LA FOTOGRAFIA -->
+<div id="modalProducto" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModalProducto()">&times;</span>
+        <img src="https://bing.com/th/id/BCO.9721a1ba-b2f4-4952-9216-260df9ea91e1.png" style="width: 200px; border-radius: 1rem; display: block; margin: 0 auto 1rem;" />
+        <h2 style="text-align:center;">Cámara Vintage</h2>
+        <p style="text-align: center;">Precio: <strong>$120.000 COP</strong></p>
+        <p style="text-align: center;">Colores disponibles:</p>
+        <ul style="text-align: center; list-style: none; padding: 0;">
+            <li style="color: #555;">Negro</li>
+            <li style="color: #8B4513;">Marrón</li>
+            <li style="color: #708090;">Gris</li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Modal Set de Pintura -->
+<div id="modalPintura" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" onclick="cerrarModal('modalPintura')">&times;</span>
+        <img src="https://bing.com/th/id/BCO.6bedd02e-ce50-4f1b-a8f7-59f6ab5281f8.png" alt="Set de Pintura" />
+        <h2>Set de Pintura</h2>
+        <p><strong>Precio:</strong> $85.000</p>
+        <p><strong>Colores disponibles:</strong> Azul, Verde, Rojo</p>
+    </div>
+</div>
+
+<!-- Modal Libro Inspirador -->
+<div id="modalLibro" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" onclick="cerrarModal('modalLibro')">&times;</span>
+        <img src="https://bing.com/th/id/BCO.9f9b6acf-4287-4931-aa5d-5d3dc00c3a34.png" alt="Libro Inspirador" />
+        <h2>Libro Inspirador</h2>
+        <p><strong>Precio:</strong> $45.000</p>
+        <p><strong>Colores disponibles:</strong> Portada Azul, Negra y Dorada</p>
+    </div>
+</div>
+
+<!-- Modal Auriculares -->
+<div id="modalAuriculares" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" onclick="cerrarModal('modalAuriculares')">&times;</span>
+        <img src="https://bing.com/th/id/BCO.cbd2d344-dfd3-450b-b030-fdeb063699d0.png" alt="Auriculares" />
+        <h2>Auriculares Pro</h2>
+        <p><strong>Precio:</strong> $120.000</p>
+        <p><strong>Colores disponibles:</strong> Negro, Plateado, Azul</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+        
+
+
+        <script>
+            function mostrarHobby(hobby) {
+                const textos = {
+                    foto: `
+                        <img src="https://bing.com/th/id/BCO.13ae5b67-2bb6-42d9-959c-c3a6f2e768d7.png" 
+                            style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; 
+                            margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                        <h3 class="member-name" style="text-align: center; font-size: 1.5rem; color: #4f46e5;">FOTOGRAFÍA</h3>
+                        <p class="member-role" style="text-align: justify;">
+                            La fotografía es uno de mis pasatiempos favoritos. Me permite capturar momentos únicos, emociones auténticas 
+                            y la belleza que a veces pasa desapercibida en lo cotidiano. A través de imágenes, se descubren nuevas formas 
+                            de ver el mundo y contar historias sin necesidad de palabras. Ya sea retratando paisajes, personas o detalles 
+                            urbanos, disfruto experimentar con la luz, los colores y las perspectivas para crear imágenes que transmitan algo especial. 
+                            Para mí, cada fotografía es una forma de expresión y una manera de conectar con mi entorno.
+                        </p>
+                    `,
+                    lectura: `
+                        <img src="https://bing.com/th/id/BCO.79f133fa-33ad-4717-af36-b27a8ac2efd0.png" 
+                            style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; 
+                            margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                        <h3 class="member-name" style="text-align: center; font-size: 1.5rem; color: #4f46e5;">LECTURA</h3>
+                        <p class="member-role" style="text-align: justify;">
+                            Leer es uno de mis pasatiempos favoritos porque me permite viajar a otros mundos, explorar ideas nuevas y entender distintas formas de ver la vida sin moverme de donde estoy. 
+                            A través de los libros, desarrollo mi pensamiento crítico, amplío mi vocabulario y me conecto con historias que inspiran, enseñan y emocionan. 
+                            Ya sea literatura clásica, novelas contemporáneas, ciencia ficción o novelas, siempre encuentro en la lectura una fuente constante de aprendizaje y disfrute personal.
+                        </p>
+                    `,
+                    pintura: `
+                        <img src="https://bing.com/th/id/BCO.f5e3803d-974e-41d2-bbd8-f36aaab3867c.png" 
+                            style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; 
+                            margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                        <h3 class="member-name" style="text-align: center; font-size: 1.5rem; color: #4f46e5;">PINTURA</h3>
+                        <p class="member-role" style="text-align: justify;">
+                            Me encanta pintar en mis ratos libres, aunque debo admitir que no lo hago muy bien. Para mí, la pintura es más una forma de relajarme y expresarme que de crear obras maestras. 
+                            Disfruto experimentar con colores, formas y texturas, sin preocuparme demasiado por el resultado final. 
+                            Es mi pequeño espacio creativo donde lo importante no es la perfección, sino el proceso y la diversión.
+                        </p>
+                    `,
+                    "escuchar musica": `
+                        <img src="https://bing.com/th/id/BCO.f4bda3d6-8ee5-4cc9-aed3-36f0a6000089.png" 
+                            style="width: 180px; height: 180px; border-radius: 80%; object-fit: cover; 
+                            margin: 0 auto 1rem; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+                        <h3 class="member-name" style="text-align: center; font-size: 1.5rem; color: #4f46e5;">ESCUCHAR MÚSICA</h3>
+                        <p class="member-role" style="text-align: justify;">
+                            Escuchar música es una de mis formas favoritas de desconectarme del mundo y conectar conmigo misma. 
+                            Cada canción tiene el poder de despertar emociones, traer recuerdos y transformar por completo el estado de ánimo. 
+                            Me encanta explorar distintos géneros y descubrir nuevos artistas que me inspiren o simplemente me acompañen en el día a día. 
+                            Para mí, la música no es solo entretenimiento, es una forma de expresión, un refugio y muchas veces, una fuente de energía y motivación.
+                        </p>
+                    `
+                };
+            
+                const modal = document.getElementById("modalHobby");
+            const contenido = document.getElementById("modalTextoHobby");
+        
+            contenido.innerHTML = textos[hobby] || "<p>Información no disponible.</p>";
+            modal.style.display = "block";
+          }
+        
+          function cerrarModalHobby() {
+        document.getElementById("modalHobby").style.display = "none";
+    }
+        
+          // ✅ Detectar clic fuera del contenido y cerrar
+               window.addEventListener("click", function(event) {
+              const modal = document.getElementById("modalHobby");
+              if (event.target === modal) {
+                 cerrarModalHobby();
+             }
+         });
+
+          function mostrarDetalleProducto() {
+                    document.getElementById("modalProducto").style.display = "block";
+                }
+                
+                function cerrarModalProducto() {
+                    document.getElementById("modalProducto").style.display = "none";
+                }
+                
+                // Cierra el modal al hacer clic fuera del contenido
+                window.onclick = function(event) {
+                    const modal = document.getElementById("modalProducto");
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+
+                function abrirModal(id) {
+                document.getElementById(id).style.display = 'block';
+                }
+        
+                function cerrarModal(id) {
+                document.getElementById(id).style.display = 'none';
+                }
+
+        </script>
+            
+         
 
 
 
