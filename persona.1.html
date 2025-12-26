@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imer Iguaran - Portafolio Personal</title>
+    <meta name="description" content="Ingeniero de sistemas UPC - Desarrollador apasionado con experiencia en soluciones digitales innovadoras">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header con imagen de fondo */
+        header {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.4);
+            z-index: 1;
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.6);
+            border: 4px solid rgba(59, 130, 246, 0.5);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 25px 50px rgba(30, 58, 138, 0.8);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(15, 23, 42, 0.8);
+            color: #f8fafc;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(15, 23, 42, 0.6);
+            color: #cbd5e1;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(30, 58, 138, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cbd5e1;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: capitalize;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+            background: rgba(30, 58, 138, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Biografía Section */
+        #biografia {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+            background-attachment: fixed;
+        }
+
+        .biografia-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.8);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .biografia-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .biografia-text p {
+            margin-bottom: 25px;
+        }
+
+        .biografia-text p:first-child {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .biografia-image {
+            position: relative;
+        }
+
+        .biografia-img {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.9));
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(30, 58, 138, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 80px;
+        }
+
+        .biografia-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        /* Hobbies Section */
+        #hobbies {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+            background-attachment: fixed;
+            padding: 80px 0;
+        }
+
+        .hobbies-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hobbies-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .hobbies-header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin: 15px 0 25px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hobbies-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            margin: 0 auto;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .hobbies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hobby-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInCard 0.6s ease forwards;
+        }
+
+        .hobby-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .hobby-card:hover::before {
+            left: 100%;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(30, 58, 138, 0.4);
+            border-color: rgba(59, 130, 246, 0.6);
+            background: rgba(30, 41, 59, 0.95);
+        }
+
+        .hobby-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
+        }
+
+        .hobby-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .hobby-card:hover .hobby-image {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(30, 58, 138, 0.5);
+        }
+
+        .hobby-image-container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .hobby-card:hover .hobby-image-container::after {
+            opacity: 1;
+            animation: shine 0.6s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .hobby-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .hobby-card:hover .hobby-title {
+            color: #3b82f6;
+        }
+
+        .hobby-description {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            text-align: justify;
+            transition: color 0.3s ease;
+        }
+
+        .hobby-card:hover .hobby-description {
+            color: #e2e8f0;
+        }
+
+        /* Productos Section */
+        .productos-section {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+            background-attachment: fixed;
+        }
+
+        .productos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .producto-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .producto-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(30, 58, 138, 0.4);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .producto-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
+        }
+
+        .producto-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .producto-card:hover .producto-image {
+            transform: scale(1.1);
+        }
+
+        .producto-content {
+            padding: 25px;
+        }
+
+        .producto-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .producto-card:hover .producto-title {
+            color: #3b82f6;
+        }
+
+        .producto-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .producto-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3);
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.5);
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+        }
+
+        .producto-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.5);
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-secondary:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Curiosidades Section */
+        #curiosidades {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%);
+            background-attachment: fixed;
+            color: white;
+        }
+
+        #curiosidades .section-title {
+            color: #f8fafc;
+        }
+
+        #curiosidades .section-subtitle {
+            color: #94a3b8;
+        }
+
+        .curiosidades-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .curiosidad-item {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(59, 130, 246, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+        }
+
+        .curiosidad-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transition: all 0.3s ease;
+        }
+
+        .curiosidad-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(30, 58, 138, 0.5);
+        }
+
+        .curiosidad-item:hover::before {
+            top: -30%;
+            right: -30%;
+        }
+
+        .curiosidad-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .curiosidad-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .curiosidad-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: 1;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(30, 58, 138, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+        }
+
+        .social-link:hover {
+            background: rgba(59, 130, 246, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.5);
+        }
+
+        .footer-text {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInCard {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hobby-card:nth-child(1) { animation-delay: 0.1s; }
+        .hobby-card:nth-child(2) { animation-delay: 0.2s; }
+        .hobby-card:nth-child(3) { animation-delay: 0.3s; }
+        .hobby-card:nth-child(4) { animation-delay: 0.4s; }
+        .hobby-card:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .biografia-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+                padding: 40px 30px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .curiosidades-container {
+                grid-template-columns: 1fr;
+            }
+
+            .productos-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hobbies-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 15px;
+            }
+
+            .hobby-image-container {
+                height: 180px;
+            }
+
+            header,
+            #biografia,
+            #hobbies,
+            .productos-section,
+            #curiosidades,
+            footer {
+                background-attachment: scroll !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hobby-card {
+                padding: 20px;
+            }
+
+            .curiosidad-item {
+                padding: 25px;
+            }
+
+            .biografia-content {
+                padding: 30px 20px;
+            }
+
+            .producto-content {
+                padding: 20px;
+            }
+
+            .producto-actions {
+                flex-direction: column;
+            }
+
+            .hobby-image-container {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con imagen de fondo -->
+    <header class="parallax-element">
+        <div class="container" style="text-align: center;">
+            <div class="profile-section">
+                <div class="profile-img">
+                    <img 
+                        src="pict/logo.jpeg"
+                        alt="Foto de Imer Iguaran"
+                        width="150"
+                        height="150"
+                        style="border-radius: 50%; display: block; margin: 0 auto;"
+                    >
+                </div>
+                <h1 style="margin-bottom: 5px;">Imer Iguaran</h1>
+                <p class="subtitle" style="font-style: italic; margin-top: 0;">
+                    Ingeniero de sistemas UPC
+                </p>
+                <hr style="width: 50px; border: 1px solid rgba(59, 130, 246, 0.5);">
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#biografia">Biografía</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#curiosidades">Curiosidades</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Biografía Section -->
+    <section id="biografia" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Un poco sobre mi</h2>
+                <p class="section-subtitle">Conoce un poco más de mi persona</p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="biografia-content">
+                <div class="biografia-text">
+                    <p>
+                        Soy Imer José Iguarán Camargo, tengo 19 años y actualmente curso el cuarto semestre de Ingeniería de Sistemas. Nací en Valledupar, pero crecí en La Jagua de Ibirico, donde viví durante 13 años. Me considero una persona íntegra, paciente y enfocada en mejorar mis habilidades constantemente.
+                    </p>
+                    <p>
+                        Estoy comprometido con mi formación profesional y personal. He realizado un curso de inglés básico y actualmente estoy participando en un curso de inteligencia artificial, lo que refuerza mi interés en el desarrollo tecnológico y la programación. Aunque mi experiencia laboral ha estado enfocada en tiendas y bodegas, he desarrollado habilidades sólidas en programación en C++, diseño básico con Canva y edición de contenido.
+                    </p>
+                    <p>
+                        Trabajo bien en equipo, prefiero resolver los problemas con diálogo y respeto, y tengo un fuerte sentido de responsabilidad. Me apasionan actividades como el voleibol, el fútbol, leer, caminar y cocinar, que me ayudan a mantener un equilibrio entre mi vida personal y académica
+                    </p>
+                    <p>
+                        Estoy motivado por el deseo de superarme y seguir aprendiendo. En este camino, sé que cuento conmigo mismo, y eso me impulsa a dar lo mejor cada día.
+                    </p>
+                </div>
+                
+                <div class="biografia-image">
+                    <div class="biografia-img">
+                        <img src="pict/biografia.png" alt="Fotografía" style="border-radius: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <div class="hobbies-header">
+            <h2>Mis Hobbies</h2>
+            <p>Las actividades que me inspiran y mantienen mi creatividad en constante evolución</p>
+            <div class="hobbies-divider"></div>
+        </div>
+        
+        <div class="hobbies-container">
+            <!-- Voleibol -->
+            <div class="hobby-card">
+                <div class="hobby-image-container">
+                    <img src="pict/voleibol.png" alt="Foto grande" width="300" height="250">
+                </div>
+                <h3 class="hobby-title">Voleibol 🏐</h3>
+                <p class="hobby-description">Siento que es uno de los deportes que más disfruto el solo de jugar con los demás y pasar el rato con este deporte es bastante gratificante.</p>
+            </div>
+
+            <!-- Música -->
+            <div class="hobby-card">
+                <div class="hobby-image-container">
+                    <img src="pict/guitarra.png" alt="Foto grande" width="300" height="250">
+                </div>
+                <h3 class="hobby-title">Guitarra 🎵</h3>
+                <p class="hobby-description">Disfruto el tocar guitarra con punteo, tocar ciertos acordes y de vez en cuando solo improvisar.</p>
+            </div>
+
+            <!-- Lectura -->
+            <div class="hobby-card">
+                <div class="hobby-image-container">
+                    <img src="pict/leer.png" alt="Foto grande" width="300" height="280">
+                </div>
+                <h3 class="hobby-title">Lectura 📖</h3>
+                <p class="hobby-description">La lectura me permite expandir mi conocimiento y explorar nuevos mundos desde la comodidad de cualquier lugar.</p>
+            </div>
+
+            <!-- Caminar - CON LA IMAGEN REAL -->
+            <div class="hobby-card">
+                <div class="hobby-image-container">
+                    <img src="pict/caminar.png" alt="Foto grande" width="300" height="280">
+                </div>
+                <h3 class="hobby-title">Caminar 🏃🏽‍♂️</h3>
+                <p class="hobby-description">Es una de las formas en la que suelo calmar mi mente, trotar al río y disfrutar de varias vistas.</p>
+            </div>
+
+            <!-- Cocina -->
+            <div class="hobby-card">
+                <div class="hobby-image-container">
+                    <img src="pict/cocina.png" alt="Foto grande" width="300" height="280">
+                </div>
+                <h3 class="hobby-title">Cocina 👨🏽‍🍳</h3>
+                <p class="hobby-description">El cocinar de vez en cuando es una actividad bastante creativa y sin contar que es algo que se puede compartir con los demás.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección de Productos -->
+    <section id="productos" class="section productos-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mis Productos</h2>
+                <p class="section-subtitle">
+                   Camisa de rosas
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="productos-container">
+                <div class="producto-card">
+                    <div class="producto-image-container">
+                        <img 
+                            src="pict/productos/camisa1.png"
+                            alt="Aplicación Web"
+                            class="producto-image"
+                        >
+                    </div>
+                    <div class="producto-content">
+                        <h3 class="producto-title">Camisa de rosas</h3>
+                        <p class="producto-description">
+                            Renueva tu estilo con el buso más audaz de la temporada. Una explosión de calaveras y rosas te acompaña en cada movimiento, fusionando la rebeldía y la elegancia. Perfecto para quienes buscan marcar la diferencia con un toque oscuro y romántico.
+                        </p>
+                        <div class="producto-actions">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image-container">
+                        <img 
+                            src="pict/productos/camisa2.png"
+                            alt="App Móvil"
+                            class="producto-image"
+                        >
+                    </div>
+                    <div class="producto-content">
+                        <h3 class="producto-title">Camisas de flores</h3>
+                        <p class="producto-description">
+                            La camisa “Bloom Vibes” combina un estampado floral contemporáneo con una paleta de colores vibrantes: tonos coral, verde esmeralda y toques de mostaza sobre fondo crudo. Con un corte unisex ligeramente oversize, se adapta a todo tipo de cuerpos y estilos, desde un look urbano hasta un atuendo más sofisticado. El tejido de algodón orgánico aporta suavidad y transpirabilidad, manteniéndote fresco sin renunciar a la resistencia y durabilidad día tras día.
+                        </p>
+                        <div class="producto-actions">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image-container">
+                        <img 
+                            src="pict/productos/pantalon.png"
+                            alt="Proyecto IA"
+                            class="producto-image"
+                            width="300" height="300">
+                        >
+                    </div>
+                    <div class="producto-content">
+                        <h3 class="producto-title">pantalon vintage</h3>
+                        <p class="producto-description">
+                            El pantalón “Retro Riviera” evoca el glamour de los años 70 con su diseño de tiro alto y corte recto que estiliza la figura. Confeccionado en mezclilla lavada en tonos índigo profundo y remaches envejecidos, ofrece ese aspecto desgastado auténtico que solo mejora con el tiempo. Su pretina ancha lleva una trabilla central y botonadura oculta de tres botones, mientras que los bolsillos delanteros están ligeramente curvados, rematados con superstitching amarillo que aporta un matiz artesanal y auténtico.
+                        </p>
+
+                        <div class="producto-actions">
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Curiosidades Section -->
+    <section id="curiosidades" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Curiosidades</h2>
+                <p class="section-subtitle">
+                    Datos interesantes y únicos que quizás no sabías sobre mí
+                </p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="curiosidades-container">
+                <div class="curiosidad-item">
+                    <div class="curiosidad-number">01</div>
+                    <h3 class="curiosidad-title">Participacion en deportes</h3>
+                    <p class="curiosidad-description">
+                        He participado en un torneo de futbol a nivel municipal quedando de segundo 
+                    </p>
+                </div>
+                
+                <div class="curiosidad-item">
+                    <div class="curiosidad-number">02</div>
+                    <h3 class="curiosidad-title">Cantidad de instrumesntos</h3>
+                    <p class="curiosidad-description">
+                        puedos tocar instrumentos como piano, guitarra, guacharaca
+                    </p>
+                </div>
+                
+                <div class="curiosidad-item">
+                    <div class="curiosidad-number">03</div>
+                    <h3 class="curiosidad-title">Escuelas </h3>
+                    <p class="curiosidad-description">
+                       he pasado por mas de 3 escuelas en toda mi vida
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    <a href="#" class="social-link" title="GitHub">🐱</a>
+                    <a href="#" class="social-link" title="Twitter">🐦</a>
+                    <a href="#" class="social-link" title="Email">📧</a>
+                    <a href="#" class="social-link" title="Portfolio">🌐</a>
+                </div>
+                <p class="footer-text">
+                    © 2025 Imer Iguaran. Diseñado con ❤️ y mucho café ☕
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada para las secciones
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas las secciones
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Funcionalidad para los botones de productos
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+            button.addEventListener('click', function() {
+                const action = this.textContent;
+                alert(`Funcionalidad "${action}" próximamente disponible!`);
+            });
+        });
+    </script>
+</body>
+</html>
